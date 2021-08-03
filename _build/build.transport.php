@@ -9,7 +9,7 @@ set_time_limit(0);
 /* define version */
 define('PKG_NAME', 'Guzzle7');
 define('PKG_NAMESPACE', 'guzzle7');
-define('PKG_VERSION', '1.0.0');
+define('PKG_VERSION', '1.0.1');
 define('PKG_RELEASE', 'pl');
 
 /* load modx */
