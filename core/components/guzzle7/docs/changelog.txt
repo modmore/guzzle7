@@ -1,3 +1,9 @@
+Guzzle7 v1.0.1-pl
+-----------------
+Released on 2021-08-03
+
+- Fix composer resolver failing on uninstall
+
 Guzzle7 v1.0.0-pl
 -----------------
 Released on 2021-08-03
