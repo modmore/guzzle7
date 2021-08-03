@@ -1,5 +1,5 @@
 Guzzle7 v1.0.0-pl
 -----------------
-Released on
+Released on 2021-08-03
 
 - First release

@@ -10,7 +10,7 @@ set_time_limit(0);
 define('PKG_NAME', 'Guzzle7');
 define('PKG_NAMESPACE', 'guzzle7');
 define('PKG_VERSION', '1.0.0');
-define('PKG_RELEASE', 'dev2');
+define('PKG_RELEASE', 'pl');
 
 /* load modx */
 require_once dirname(__DIR__) . '/config.core.php';
@@ -78,7 +78,7 @@ $builder->package->put(
             ],
             [
                 'type' => 'php',
-                'source' => $sources['resolvers'] . 'extension_packages.resolver.php',
+                'source' => $sources['resolvers'] . 'extension_package.resolver.php',
             ],
         ]
     ]
