@@ -10,7 +10,7 @@ set_time_limit(0);
 define('PKG_NAME', 'Guzzle7');
 define('PKG_NAMESPACE', 'guzzle7');
 define('PKG_VERSION', '1.0.0');
-define('PKG_RELEASE', 'dev1');
+define('PKG_RELEASE', 'dev2');
 
 /* load modx */
 require_once dirname(__DIR__) . '/config.core.php';
@@ -71,12 +71,16 @@ $builder->package->put(
                 'source' => $sources['validators'] . 'requirements.script.php'
             ]
         ],
-        'resolve' => array(
-            array(
+        'resolve' => [
+            [
                 'type' => 'php',
                 'source' => $sources['resolvers'] . 'composer.resolver.php',
-            )
-        )
+            ],
+            [
+                'type' => 'php',
+                'source' => $sources['resolvers'] . 'extension_packages.resolver.php',
+            ],
+        ]
     ]
 );
 $modx->log(modX::LOG_LEVEL_INFO,'Packaged in core, requirements validator, and composer installer resolver.'); flush();
