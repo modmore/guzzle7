@@ -16,11 +16,12 @@ if (!$transport->xpdo) {
     return false;
 }
 
+$modx =& $transport->xpdo;
+
+// Only run on install and upgrade
 if (!in_array($options[xPDOTransport::PACKAGE_ACTION], [xPDOTransport::ACTION_INSTALL, xPDOTransport::ACTION_UPGRADE], true)) {
     return false;
 }
-
-$modx =& $transport->xpdo;
 
 $modx->log(modX::LOG_LEVEL_INFO, 'Installing/updating guzzle..');
 
