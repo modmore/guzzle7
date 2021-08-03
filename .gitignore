@@ -1,0 +1,5 @@
+config.core.php
+core/components/guzzle7/vendor/
+core/components/guzzle7/.composer/
+core/components/guzzle7/composer.lock
+_packages/

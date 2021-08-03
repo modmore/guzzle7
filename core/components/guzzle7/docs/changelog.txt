@@ -1,0 +1,5 @@
+Guzzle7 v1.0.0-pl
+-----------------
+Released on
+
+- First release
