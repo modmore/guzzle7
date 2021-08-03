@@ -50,7 +50,7 @@ try {
 }
 
 $output = $io->getOutput();
-$output = trim($output);
+$output = nl2br(trim($output));
 $modx->log(modX::LOG_LEVEL_INFO, $output);
 
 return $success;
