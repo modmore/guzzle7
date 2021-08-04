@@ -29,6 +29,7 @@ $path = MODX_CORE_PATH . 'components/guzzle7/';
 putenv("COMPOSER={$path}composer.json");
 putenv("COMPOSER_HOME={$path}.composer");
 putenv("COMPOSER_VENDOR_DIR={$path}vendor/");
+chdir($path);
 
 require "phar://{$path}composer.phar/vendor/autoload.php";
 
