@@ -1,6 +1,12 @@
-- Extend the MODX3 check to only skip when the PSR client exists in the container
-- Extend the already-loaded check to also check the ClientInterface; this helps alleviate conflicts caused by AWS SDKs (and others) that try to determine the available Guzzle version from the interface constant.
-- "Pre-load" the ClientInterface, Client, HandlerStack and Utils classes
+Guzzle7 v7.3.0-pl
+-----------------
+Released on 2021-08-17
+
+- Change the way we check for and "pre-load" Guzzle into memory. We're now first attempting to load the ClientInterface, Client, HandlerStack and Utils class to determine if we should provide Guzzle. If so, we include the autoloader and load those classes again.
+- Remove MODX3-specific check. Rather, rely on class detection to see if Guzzle should be loaded or not.
+- Moving forward, this package will follow Guzzle minor version numbering.
+    - The major/minor version (currently 7.3) will match the minor version of Guzzle (so we'll release an update when 7.4 is released), while the patch version and release index will be specific to this MODX package. This way, dependant packages could indicate they require at least a certain minimum of Guzzle.
+    - The latest Guzzle release is still installed like before during package installation. Re-install the package to update to a new Guzzle patch release.
 
 Guzzle7 v1.0.1-pl
 -----------------

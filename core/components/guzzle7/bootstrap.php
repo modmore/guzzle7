@@ -1,10 +1,5 @@
 <?php
 
-// MODX3 (as of alpha4) ships with Guzzle already, so we do absolutely nothing if the PSR ClientInterface exists
-if (isset($modx) && $modx->services instanceof \Psr\Container\ContainerInterface && $modx->services->has(\Psr\Http\Client\ClientInterface::class)) {
-    return;
-}
-
 $classes = [
     \GuzzleHttp\ClientInterface::class,
     \GuzzleHttp\Client::class,
@@ -12,9 +7,10 @@ $classes = [
     \GuzzleHttp\HandlerStack::class
 ];
 
-// Make sure Guzzle is not already available from another package. We do this with class_exists checks, which also
-// "pre-loads" the classes so that if there is a dependency conflict these key classes are always loaded from the
-// already available version.
+// Make sure Guzzle is not already available from another package, or the core in MODX3 alpha4+.
+// We check for this with class_exists checks, which will use any available autoloader to try and find the classes.
+// This also "pre-loads" the classes; if there is in fact a dependency conflict this greatly improves the chance it'll
+// work correctly as key dependent classes are found from the same location.
 $skip = true;
 foreach ($classes as $className) {
     if (!class_exists($className)) {
