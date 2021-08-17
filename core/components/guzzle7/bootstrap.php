@@ -29,7 +29,4 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
 // Pre-load the same classes we checked before, now from our own package
 foreach ($classes as $className) {
     $loaded = class_exists($className);
-    if (!$loaded) {
-        $modx->log(modX::LOG_LEVEL_ERROR, '[guzzle7] Failed loading ' . $className);
-    }
 }
