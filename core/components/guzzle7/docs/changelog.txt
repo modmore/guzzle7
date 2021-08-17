@@ -1,6 +1,6 @@
 - Extend the MODX3 check to only skip when the PSR client exists in the container
 - Extend the already-loaded check to also check the ClientInterface; this helps alleviate conflicts caused by AWS SDKs (and others) that try to determine the available Guzzle version from the interface constant.
-- "Pre-load" the ClientInterface, Client, and Utils classes after loading the autoloader
+- "Pre-load" the ClientInterface, Client, HandlerStack and Utils classes
 
 Guzzle7 v1.0.1-pl
 -----------------
