@@ -1,3 +1,10 @@
+Guzzle7 v7.8.0-pl
+-----------------
+Released on 2023-09-12
+
+- Update guzzle to ^7.8
+- Update shipped composer to v2.6.2
+
 Guzzle7 v7.3.1-pl
 -----------------
 Released on 2021-10-13
